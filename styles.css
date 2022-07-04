@@ -1,0 +1,54 @@
+body {
+    background: #161623;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+.card {
+    height: 250px;
+    width: 200px;
+    border-radius: 10px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 10px;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.front {
+    z-index: 2;
+    backface-visibility: hidden;
+    background: yellow;
+    color: black;
+}
+
+.back {
+    z-index: 1;
+    transform: rotateY(180deg);
+    background: white;
+    color: black;
+}
+
+
+.container:hover .card {
+    transform: rotateY(180deg);
+
+}
+
+.container {
+    perspective: 1000px;
+}
